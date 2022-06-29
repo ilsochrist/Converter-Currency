@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="icon" href="images/favicon.png" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor do Ilso</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="container">
+            <figure class="cabecalho_alura-imersaodev">
+                <img src="assets/img/logo-imersao-conversor-de-moedas.svg" alt="Logo Alura">
+            </figure>
+            <figure class="tiopatinhas">
+                <img src="/assets/img/tiopato.jpg" alt="Tio Patinhas" id="imgPato">
+            </figure>
+        </div>
+    </header>
+    <main id='tela-principal'>
+        <h1>Conversor de Moedas</h1>
+        <section class='conteudos'>
+            <div class='form-group'>
+                <label for="valorEmReal">R$</label>
+                <input type="number" name="valorEmReal" id="valorEmReal" class='input' step='0' min='0.00'
+                    max='9999999999' value='' tabindex="1" onClick='ativarBotao()' onChange='ativarBotao()' autofocus
+                    required onkeyup="this.value = numberMask(this.value)"/>
+            </div>
+
+            <div class="form-group">
+                <input type="radio" id='dolar' name="moedaEstrangeira" class="input radio" value='Dólar' tabindex="2" />
+                <label for="dolar">Dólar</label>
+
+                <input type="radio" id='euro' name="moedaEstrangeira" class="input radio" value='Euro' tabindex="3" />
+                <label for="euro">Euro</label>
+
+                <input type="radio" id='libra' name="moedaEstrangeira" class="input radio" value='Libra' tabindex="4" />
+                <label for="libra">Libra</label>
+
+                <input type="radio" id='bitcoins' name="moedaEstrangeira" class="input radio" value='Bitcoins'
+                    tabindex="5" /> <label for="bitcoins">Bitcoins</label>
+            </div>
+            <div class="form-group">
+                <button class='desativado botao' id='btnConverter' onClick='ativarBotao(); bloquearBotao()'
+                    disabled>Converter</button>
+                <button type="reset" class='botao' id='btnLimpar' tabindex="7">Limpar</button>
+            </div>
+        </section>
+        <div class="instrucoes">
+            <p class='centro' id='aviso'>Limpe, digite, escolha a moeda e converta</p>
+        </div>
+        <br>
+        <div class="instrucoes" style='background: #0b0704; border:0'>
+            <figure id='imgMoedas' class='centro'>
+                <img class='animar' src="assets/img/real.png" alt="Real" width='100px' />
+                <img class='animar' src="assets/img/dolar.png" alt="Moeda Estrangeira" width='100px' />
+            </figure>
+        </div>
+    
+    </main>
+    <audio preload id='money' src="assets/img/money.mp3" type="audio/mpeg">
+    </audio>
+    <footer class="rodape">
+                <div class="container">
+    <h1 class="direitosAutorais">Desenvolvido por Ilso Christ &copy; 2022</h1>
+    </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
